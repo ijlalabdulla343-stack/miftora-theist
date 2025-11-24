@@ -135,7 +135,8 @@
             margin-top: 50px;
         }
 
-        .download-btn {
+        /* The following styles apply to both buttons */
+        .cta-btn {
             position: relative;
             padding: 22px 55px;
             font-size: 19px;
@@ -154,7 +155,7 @@
             box-shadow: 0 20px 60px rgba(124, 58, 237, 0.5);
         }
 
-        .download-btn::before {
+        .cta-btn::before {
             content: '';
             position: absolute;
             top: 0;
@@ -165,18 +166,23 @@
             transition: left 0.5s;
         }
 
-        .download-btn:hover::before {
+        .cta-btn:hover::before {
             left: 100%;
         }
 
-        .download-btn:hover {
+        .cta-btn:hover {
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 25px 80px rgba(124, 58, 237, 0.7);
         }
 
-        .download-icon {
+        .cta-icon-apk {
             font-size: 26px;
             animation: bounce 2s ease infinite;
+        }
+        
+        /* New icon style for the site button */
+        .cta-icon-site {
+            font-size: 26px;
         }
 
         @keyframes bounce {
@@ -253,7 +259,7 @@
                 flex-direction: column;
             }
 
-            .download-btn {
+            .cta-btn {
                 width: 100%;
                 justify-content: center;
             }
@@ -277,9 +283,14 @@
                     A platform designed to facilitate thoughtful conversations between different perspectives.
                 </p>
                 <div class="cta-container">
-                    <a href="https://drive.google.com/uc?export=download&id=1m4rkEQZy7iqNGRq26UtRZmuBl_y-MwSL" class="download-btn">
-                        <span class="download-icon">📱</span>
+                    <a href="https://drive.google.com/uc?export=download&id=1m4rkEQZy7iqNGRq26UtRZmuBl_y-MwSL" class="cta-btn">
+                        <span class="cta-icon-apk">📱</span>
                         Download APK
+                    </a>
+
+                    <a href="https://mif-ai.netlify.app/" class="cta-btn">
+                        <span class="cta-icon-site">🌐</span>
+                        Visit Our Site
                     </a>
                 </div>
             </div>
@@ -365,25 +376,6 @@
             canvas.height = window.innerHeight;
         });
 
-        // Removed parallax effect for the orbs:
-        // let mouseX = 0;
-        // let mouseY = 0;
-        
-        // document.addEventListener('mousemove', (e) => {
-        //     mouseX = (e.clientX - window.innerWidth / 2) * 0.02;
-        //     mouseY = (e.clientY - window.innerHeight / 2) * 0.02;
-        // });
-
-        // function parallax() {
-        //     document.querySelectorAll('.orb').forEach((el, index) => {
-        //         const speed = (index + 1) * 0.3;
-        //         const currentTransform = el.style.transform || '';
-        //         el.style.transform = `${currentTransform.split('translate')[0]} translate(${mouseX * speed}px, ${mouseY * speed}px)`;
-        //     });
-        //     requestAnimationFrame(parallax);
-        // }
-
-        // parallax();
     </script>
 </body>
 </html>
